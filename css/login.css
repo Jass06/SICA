@@ -1,0 +1,208 @@
+/*========== Theme Color ==========*/
+:root {
+    --greyBlue: #E8F2FE;
+    --lightBlue: #668FE7;
+    --accentBlue: #0075FF;
+    --darkBlue: #50589E;
+    --notBlack: #484B6C;
+    --blackBlue: #011734;
+    --btnYellow: #E49D27;
+    --grey70: #6B6F8D;
+    --grey50: #CED0E4;
+    --grey30: #DEDFF1;
+    --grey10: #EEEFF8;
+    --white: #FFFFFF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/*
+    Light Blue #668FE7
+    Dark Blue #50589E
+ */
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(80,88,158);
+    background: radial-gradient(circle, rgba(80,88,158,1) 0%, rgba(102,143,231,1) 100%);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    width: 70%;
+    height: 80vh;
+    display: flex;
+    background: var(--grey10);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+/* LOGIN FORMULATION */
+.formLogin {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem 2rem 3rem;
+}
+
+.navLogo{
+    padding-bottom: 30px;
+}
+.navLogo .logo-capas{
+    width: 60px;
+    padding: 5px;
+}
+ .navLogo .logo-golden{
+    width: 180px;
+}
+/*LOGIN HEADER*/
+.form-header {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: var(--accentBlue);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+/*LOGIN INPUT*/
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    letter-spacing: 1px;
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px var(--grey50);
+    font-size: 0.8rem;
+}
+
+.input-box input:hover {
+    background-color: var(--grey10);
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid var(--lightBlue);
+}
+
+.input-box label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--blackBlue);
+    pointer-events: none;
+    transition: .5s;
+}
+
+/*LOGIN BUTTON */
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background-color: var(--btnYellow);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+.login-button button:hover {
+    background-color: var(--accentBlue);
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--white);
+}
+
+/*LOGIN IMAGE*/
+.imageLogin {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.imageLogin .img-login{
+    left: 50rem;
+    width: 31rem;
+}
+.imageLogin .img-previa{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 25px;
+    width: 150px;
+    animation: move 2.5s linear infinite;
+}
+@keyframes move{
+    0%, 100% {
+        margin-top: -50px;
+    }
+    50% {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .imageLogin {
+        display: none;
+    }
+    .container {
+        width: 60%;
+    }
+    .formLogin {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        flex-wrap: nowrap;
+    }
+
+}
+
