@@ -422,6 +422,56 @@
                     <h3 class="contact-title">
                         <i class="ri-chat-3-line"></i> Talk to me
                     </h3>
+                    <div class="contact-info">
+                        <div class="contact-data">
+                            <span class="contact-data-title">Email</span>
+                            <span class="contact-data-info">jass@gmail.com</span>
+                        </div>
+                        <div class="contact-data">
+                            <span class="contact-data-title">Whatsapp</span>
+                            <span class="contact-data-info">+51 999888777</span>
+
+                            <a href="https://api.whatsapp.com/send?phone=51939279572&text=Estado: Me shene con paneton aiuda" target="_blank" class="contact-button">
+                                Write me <i class="ri-arrow-right-s-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact-data">
+                            <span class="contact-data-title">Messenger</span>
+                            <span class="contact-data-info">@jass</span>
+
+                            <a href="https://api.whatsapp.com/send?phone=51939279572&text=Estado: Me shene con paneton aiuda" target="_blank" class="contact-button">
+                                Write me <i class="ri-arrow-right-s-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-content">
+                    <h3 class="contact-title">
+                        <i class="ri-send-plane-line"></i> Write me
+                    </h3>
+                    
+                    <form action="" class="contact-form" id="contact-form">
+                        <div class="contact-form-div">
+                            <label for="" class="contact-form-tag">Names</label>
+                            <input type="text" name="user-name" required placeholder="Write your names" class="contact-form-input" id="contact-name" >
+                        </div>
+                        <div class="contact-form-div">
+                            <label for="" class="contact-form-tag">Email</label>
+                            <input type="emil" name="user-email" required placeholder="Write your names" class="contact-form-input" id="contact-email" >
+                        </div>
+                        <div class="contact-form-div contact-form-area">
+                            <label for="" class="contact-form-tag">Textarea</label>
+                            <textarea name="user-project" placeholder="Write your Textarea"  id="contact-project" class="contact-form-input" ></textarea>
+                        </div>
+
+                        <p class="contact-message" id="contact-message"></p>
+
+                        <button type="submit" class="contact-button">
+                            Submit <i class="ri-arrow-right-up-line"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -443,7 +493,7 @@
     <script src="../js/swiper-bundle.min.js"></script>
 
     <!--=============== EMAIL JS ===============-->
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="../js/main.js"></script>
