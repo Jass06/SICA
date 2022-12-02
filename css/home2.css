@@ -19,9 +19,6 @@
     --grey10: #EEEFF8;
     --white: #FFFFFF;
 
-
-    --header-height: 3.5rem;
-
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
     --first-color: hsl(207, 65%, 65%);
@@ -40,6 +37,7 @@
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: 'Roboto', sans-serif;
+
     --title-font: 'Lora', serif;
     --biggest-font-size: 1.5rem;
     --h1-font-size: 1.5rem;
@@ -53,6 +51,7 @@
     /*========== Font weight ==========*/
     --font-medium: 500;
     --font-semi-bold: 600;
+    --header-height: 3.5rem;
 
     /*========== z index ==========*/
     --z-normal: 1;
@@ -111,12 +110,12 @@ img {
     max-width: 100%;
     height: auto;
 }
-
+/*1rem <-> 16px*/
 /*=============== THEME ===============*/
 .nav-workspace{
     display: flex;
     align-items: center;
-    column-gap: 3rem;
+    column-gap: 1rem; /* espacio entre cada componente*/
     background-color: palegoldenrod;
 }
 .change-theme{
@@ -126,45 +125,6 @@ img {
     transition: color .3s;
 }
 
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-    --title-color: hsl(207, 4%, 95%);
-    --text-color: hsl(207, 4%, 65%);
-    --body-color: hsl(207, 4%, 10%);
-    --container-color: hsl(207, 4%, 12%);
-}
-
-/*==========
-    Color changes in some parts of
-    the website, in light theme
-==========*/
-.dark-theme .nav,
-.dark-theme .nav-menu,
-.dark-theme .scrollup{
-    background-color: var(--container-color);
-    box-shadow: 0 4px 20px hsla(207, 24%, 8%, .4);
-}
-.dark-theme .home-shape-wawes,
-.dark-theme .home-shape-circle,
-.dark-theme .qualification-img,
-.dark-theme .testimonial-img{
-    filter: invert(1);
-}
-.dark-theme .home-social-link{
-    color: var(--title-color);
-}
-.dark-theme .section-border{
-    border-bottom: 1px solid hsl(207, 4%, 32%);
-}
-.dark-theme::-webkit-scrollbar{
-    background-color: hsl(207, 4%, 15%);
-}
-.dark-theme::-webkit-scrollbar-thumb{
-    background-color: hsl(207, 4%, 25%);
-}
-.dark-theme::-webkit-scrollbar-thumb:hover{
-    background-color: hsl(207, 4%, 35%);
-}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -252,22 +212,6 @@ body.dark-theme {
     cursor: pointer;
 }
 
-@media  screen and (max-width: 1023px) {
-    .nav-menu{
-        position: fixed;
-        width: 50%;
-        left: 0;
-        right: 0;
-        bottom: -60%;
-        margin: 0 auto;
-        background-color: var(--body-color);
-        box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
-        padding: 2rem 1.5rem 5rem;
-        border-radius: 2rem;
-        transition: bottom .3s;
-    }
-}
-
 .nav-list{
     grid-template-columns: repeat(3, max-content);
     jusify-content: center;
@@ -284,7 +228,7 @@ body.dark-theme {
     transition: color .3s;
 }
 
-.nav-lin:hover{
+.nav-link:hover{
     color: var(--title-color);
 }
 
@@ -310,6 +254,8 @@ body.dark-theme {
     color: var(--title-color);
 }
 
+/* Workspace */
+
 .avatar {
     font-size: 16px;
     width: 40px;
@@ -325,25 +271,15 @@ body.dark-theme {
     font-family: 'Reader Pro', sans-serif;
     color: var(--grey70);
 }
-
-
-[data-initials]:before {
-    background: #099bdd;
-    color: white;
-    opacity: 1;
-    content: attr(data-initials);
-    display: inline-block;
-    font-weight: bold;
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 0.5em;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+.user .user-name{
+    font-size: 15px;
 }
-
-
+.user .user-job{
+    font-size: 12px;
+}
+.user-profile .btn i{
+    font-size: 35px;
+}
 /*=============== SERVICES ===============*/
 .services-container{
     row-gap: 2.5rem;
@@ -351,8 +287,8 @@ body.dark-theme {
 }
 .services-card{
     position: relative;
-    width: 228px;
-    height: 322px;
+    width: 100px;
+    height: 100px;
     background-color: var(--container-color);
     text-align: center;
     padding: 3.5rem 1rem;
@@ -363,13 +299,13 @@ body.dark-theme {
     display: block;
     font-size: 2rem;
     color: var(--title-color);
-    margin-bottom: .75rem;
+    margin-bottom: 3px;
     transition: transform .8s;
 }
 .services-title{
-    font-size: var(--h2-font-size);
+    font-size: 12px;
     font-weight: var(--font-semi-bold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 5px;
 }
 .services-border {
     width: 248px;
@@ -406,122 +342,9 @@ body.dark-theme {
     background-color: hsl(207, 4%, 55%);
 }
 
-/*=============== SCROLL UP ===============*/
-.scrollup{
-    position: fixed;
-    right: 1rem;
-    /* bottom: 7.5rem; */
-    bottom: -30%;
-    background-color: var(--body-color);
-    box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
-    display: inline-flex;
-    padding: .35rem;
-    border-radius: .25rem;
-    font-size: 1.1rem;
-    color: var(--title-color);
-    z-index: var(--z-tooltip);
-    transition: bottom .3s, transform .3s;
-}
 
-.scrollup:hover{
-    transform: translateY(-.25rem);
-}
-
-/* Show Scroll Up*/
-.show-scroll{
-    bottom: 7.5rem;
-}
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 340px){
-    .container{
-        margin-inline: 1rem;
-    }
-    .nav-menu{
-        padding-bottom: 4rem;
-    }
-    .nav-list{
-        gap: 1rem 1.25rem;
-    }
-    .skills-info{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .projects-img{
-        width: 200px;
-        justify-self: center;
-    }
-}
-
-/* For medium devices */
-@media screen and (min-width: 576px){
-    .nav,
-    .nav-menu{
-      width: 380px;
-    }
-    .nav{
-        margin: 0 auto;
-    }
-    .skills-container{
-        justify-content: center;
-    }
-    .projects-container,
-    .testimonial-container{
-        width: 400px;
-    }
-    .projects-container{
-        overflow: hidden;
-    }
-    .projects-container .swiper-button-prev{
-        left: 1rem;
-    }
-    .projects-container .swiper-button-next{
-        right: 1rem;
-    }
-}
-
-@media screen and (min-width: 767px) {
-    .home-container{
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-    .home-data{
-        order: 2;
-    }
-    .home-info:nth-child(3){
-        order: 3;
-        text-align: right;
-    }
-    .home-info{
-        margin-top: 10rem;
-    }
-    .home-info-description{
-        padding-right: 0;
-    }
-    .skills-container,
-    .qualification-container,
-    .services-container,
-    .contact-container{
-        grid-template-columns: repeat(2, max-content);
-    }
-    .skills-container,
-    .services-container{
-        column-gap: 5rem;
-    }
-    .qualification-container{
-         justify-content: center;
-        column-gap: 10rem;
-    }
-    .projects-container{
-        width: 500px
-    }
-    .contact-form{
-        width: 360px;
-    }
-    .contact-container{
-        justify-content: center;
-        column-gap: 8rem;
-    }
-}
 
 /* For large devices */
 @media screen and (min-width: 1023px) {
@@ -545,7 +368,7 @@ body.dark-theme {
     .nav-close{
         display: none;
     }
-    .nav-menu{
+    .nav-filter{
         width: initial;
         margin-left: auto;
         background-color: var(--body-color);
@@ -600,174 +423,53 @@ body.dark-theme {
 }
 @media screen and (min-width: 1200px) {
     .section-border{
-        padding-bottome: 6rem;
+        padding-bottom: 6rem;
     }
     .section-subtitle{
         margin-bottom: 5rem;
     }
-    .home-title{
-        font-size: var(--biggest-font-size);
-    }
-    .home-blob{
-        width: 400px;
-        height: 580px;
-        border-radius: 12.5rem;
-    }
-    .home-perfil{
-        width: 340px;
-        height: 520px;
-        border-radius: 10.6rem;
-    }
-    .home-perfil img{
-        width: 300px;
-    }
-    .home-shape-wawes{
-        width: 100px;
-        left: -4rem;
-        top: 10rem;
-    }
-    .home-shape-circle{
-        width: 250px;
-        bottom: -1rem;
-        right: -5rem;
-    }
-    .home-data{
-        row-gap: 2.5rem;
-    }
-    .home-social{
-        column-gap: 2rem;
-    }
-    .home-social-link{
-        font-size: 1.5rem;
-    }
-    .home-info{
-        grid-template-rows: repeat(3, 130px);
-        row-gap: 4rem;
-        margin-top: 16rem;
-    }
-    .skills-container{
-        column-gap: 10rem;
-    }
-    .skills-title{
-        margin-bottom: 3rem;
-    }
-    .skills-title i{
-        font-size: 1.25rem;
-    }
-    .skills-name{
-        font-size: var(--normal-font-size);
-    }
-    .skills-info{
-        gap: 3rem;
-    }
-    .qualification-container{
-        column-gap: 14rem;
-    }
-    .qualification-title{
-        margin-bottom: 3rem;
-    }
-    .qualification-title i{
-        font-size: 1.25rem;
-    }
-    .qualification-name{
-        font-size: var(--h3-font-size);
-    }
-    .qualification-img{
-        width: 300px;
-        left: -6rem;
-        bottom: 5rem;
-    }
+
     .services-container{
         grid-template-columns: repeat(3, max-content);
     }
     .services-card{
-        width: 245px;
-        height: 345px;
+        width: 80px;
+        height: 120px;
         border: 7.6rem;
-        padding: 3.5rem 1.5rem;
+        padding: 1.5rem 1.5rem;
     }
     .services-card i{
         font-size: 2.5rem;
     }
     .services-border{
-        width: 265px;
-        height: 365px;
+        width: 100px;
+        height: 100px;
         border-radius: 8.25rem;
     }
-    .projects-container{
-        width: 900px;
-    }
-    .projects-container .swiper-button-prev,
-    .projects-container .swiper-button-next{
-        font-size: 3rem;
-    }
-    .projects-container .swiper-button-prev{
-        left: -1rem;
-    }
-    .projects-container .swiper-button-next{
-        right: -1rem;
-    }
-    .projects-container .swiper-slide{
-        margin-bottom: 6.5rem;
-    }
-    .projects-img{
-        width: 320px;
-        margin-bottom: 2rem;
-    }
-    .testimonial-container{
-        width: 566px;
-    }
-    .testimonial-container .swiper-button-prev,
-    .testimonial-container .swiper-button-next{
-        font-size: 2.5rem;
-    }
-    .testimonial-container .swiper-button-prev{
-        left: calc(50% - 5rem);
-    }
-    .testimonial-container .swiper-button-next{
-        right: calc(50% - 5rem);
-    }
-    .testimonial-container .swiper-slide{
-        margin-bottom: 6rem;
-    }
-    .testimonial-description{
-        font-size: var(--h2-font-size);
-        margin-bottom: 2rem;
-    }
-    .testimonial-img{
-        width: 200px;
-        top: 13rem;
-        right: 4rem;
-    }
-    .contact-title{
-        margin-bottom: 3rem;
-    }
-    .contact-title i{
-        font-size: 1.25rem;
-    }
-    .contact-info{
-        row-gap: 3rem;
-    }
-    .contact-data-info{
-        font-size: var(--normal-font-size);
-    }
-    .contact-form{
-        row-gap: 2.5rem;
-    }
-    .footer-container{
-        padding: 4rem 0 3rem;
-    }
-    .footer-list{
-        column-gap: 3rem;
-        margin: 3rem 0;
-    }
-    .footer-social{
-        column-gap: 2rem;
-    }
-    .footer-social-link{
-        font-size: 1.5rem;
-    }
-    .footer-copy{
-        margin-top: 5rem
-    }
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    /* bottom: 7.5rem; */
+    bottom: -30%;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
+    display: inline-flex;
+    padding: .35rem;
+    border-radius: .25rem;
+    font-size: 1.1rem;
+    color: var(--title-color);
+    z-index: var(--z-tooltip);
+    transition: bottom .3s, transform .3s;
+}
+
+.scrollup:hover{
+    transform: translateY(-.25rem);
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+    bottom: 7.5rem;
 }
