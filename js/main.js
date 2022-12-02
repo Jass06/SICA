@@ -1,3 +1,12 @@
+
+/*=============== SHOW MENU ===============*/
+const avatars = document.querySelectorAll(".avatar")
+avatars.forEach(a => {
+    const charCodeGreen = a.dataset.label.charCodeAt(0);
+    const charCodeRed = a.dataset.label.charCodeAt(1);
+    console.log(charCodeRed)
+});
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
