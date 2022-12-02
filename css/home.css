@@ -1,3 +1,211 @@
+/*REPO*/
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');*/
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Theme Color ==========*/
+    --greyBlue: #E8F2FE;
+    --lightBlue: #668FE7;
+    --accentBlue: #0075FF;
+    --darkBlue: #50589E;
+    --notBlack: #484B6C;
+    --blackBlue: #011734;
+    --btnYellow: #E49D27;
+    --grey70: #6B6F8D;
+    --grey50: #CED0E4;
+    --grey30: #DEDFF1;
+    --grey10: #EEEFF8;
+    --white: #FFFFFF;
+
+
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(207, 65%, 65%);
+    --title-color: hsl(207, 4%, 16%);
+    --text-color: hsl(207, 4%, 28%);
+    --text-color-light: hsl(207, 4%, 56%);
+    --body-color: hsl(207, 4%, 99%);
+    --container-color: hsl(207, 4%, 95%);
+
+    /* Change the first number */
+    /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+    --gradient-color: linear-gradient(180deg,
+    hsla(250, 48%, 72%, 0),
+    hsla(250, 65%, 65%, 1));
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Roboto', sans-serif;
+    --title-font: 'Lora', serif;
+    --biggest-font-size: 1.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .625rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+        --biggest-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+        --tiny-font-size: .688rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background .4s; /* for dark mode animation */
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-family: var(--title-font);
+    font-weight: var(--font-medium);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== THEME ===============*/
+.nav-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.change-theme{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+    --title-color: hsl(207, 4%, 95%);
+    --text-color: hsl(207, 4%, 65%);
+    --body-color: hsl(207, 4%, 10%);
+    --container-color: hsl(207, 4%, 12%);
+}
+
+/*==========
+    Color changes in some parts of
+    the website, in light theme
+==========*/
+.dark-theme .nav,
+.dark-theme .nav-menu,
+.dark-theme .scrollup{
+    background-color: var(--container-color);
+    box-shadow: 0 4px 20px hsla(207, 24%, 8%, .4);
+}
+.dark-theme .home-shape-wawes,
+.dark-theme .home-shape-circle,
+.dark-theme .qualification-img,
+.dark-theme .testimonial-img{
+    filter: invert(1);
+}
+.dark-theme .home-social-link{
+    color: var(--title-color);
+}
+.dark-theme .section-border{
+    border-bottom: 1px solid hsl(207, 4%, 32%);
+}
+.dark-theme::-webkit-scrollbar{
+    background-color: hsl(207, 4%, 15%);
+}
+.dark-theme::-webkit-scrollbar-thumb{
+    background-color: hsl(207, 4%, 25%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(207, 4%, 35%);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1024px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 2.5rem;
+}
+
+.section-border {
+    border-bottom: 1px solid var(--title-color);
+    padding-bottom: 3.5rem;
+}
+
+.section-title,
+.section-subtitle {
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: .25rem;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    margin-bottom: 3rem;
+}
+
+.main {
+    overflow: hidden; /* For animation */
+}
 
 /*=============== HEADER & NAV ===============*/
 .header {
@@ -30,6 +238,11 @@
 .nav-logo{
     font-family: var(--title-font);
     font-weight: var(--font-medium);
+}
+
+.logo-capas {
+    width: 50px;
+    padding: 5px;
 }
 
 .nav-toggle{
@@ -190,6 +403,7 @@
 /*=============== SKILLS ===============*/
 .skills-container{
     row-gap: 3.5rem;
+
 }
 .skills-title{
     display: flex;
@@ -840,6 +1054,7 @@
         color: var(--title-color);
     }
     .section{
+
         padding-block: 8rem 0;
     }
     .home-title{
@@ -864,7 +1079,7 @@
 
 @media screen and (min-width: 1048px) {
     .container{
-        margin-inline: auto   ;
+        margin-inline: auto ;
     }
 }
 @media screen and (min-width: 1200px) {
