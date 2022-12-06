@@ -1,5 +1,5 @@
 
-/*=============== SHOW MENU ===============*/
+/*=============== AVATAR USER ===============*/
 const avatars = document.querySelectorAll(".avatar")
 avatars.forEach(a => {
     const charCodeGreen = a.dataset.label.charCodeAt(0);

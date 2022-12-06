@@ -383,7 +383,7 @@ body.dark-theme {
 .home-shape-wawes,
 .home-shape-circle {
     position: absolute;
-    opacity: 1px;
+    opacity: 0.5;
 }
 .home-shape-wawes{
     width: 100px;
@@ -1253,7 +1253,7 @@ body.dark-theme {
     }
     .testimonial-img{
         width: 200px;
-        top: 13rem;
+        top: 13rem
         right: 4rem;
     }
     .contact-title{
